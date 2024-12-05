@@ -16,17 +16,460 @@ Select ONE Additional Feature to Add
 
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Benjamin Franklin</title>
+    <meta charset="utf-8" />
+    <style>
+      ul{
+        list-style-type:none;
+        margin: 0;
+        padding: 0;
 
-<head>
-  <title>Unit 5 Project</title>
-  <meta charset="utf-8">
-  <style>
+        background-color: #FCF5ED;
+        overflow: hidden;
 
-  </style>
-</head>
-<body>
+      }
+      li {
+        display: inline;
+      }
+      li a {
+        text-decoration: none;
+        padding: 8px;
+        background-color:#ce5a67;
+        color: #091057;
+      }
+      * {
+        box-sizing: border-box;
+      }
 
- 
+      body {
+       color: #091057;
+        background-color: #FCF5ED;
+        font-family: cursive;
+        width: 60%;
+        margin: auto;
 
-</body>
+      /* The actual timeline (the vertical ruler) */
+      .timeline {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      /* The actual timeline (the vertical ruler) */
+      .timeline::after {
+        content: "";
+        position: absolute;
+        width: 6px;
+        background-color: #131842;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -3px;
+      }
+
+      /* Container around content */
+      .container {
+        padding: 10px 40px;
+        position: relative;
+        background-color: #fcf5ed;
+        width: 50%;
+      }
+
+      /* The circles on the timeline */
+      .container::after {
+        content: "";
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        right: -17px;
+        /*         background-color: #dad4b5; */
+        background-color: #f4bf96;
+        border: 4px solid #ce5a67;
+        top: 15px;
+        border-radius: 50%;
+        z-index: 1;
+      }
+
+      /* Place the container to the left */
+      .left {
+        left: 0;
+      }
+
+      /* Place the container to the right */
+      .right {
+        left: 50%;
+      }
+
+      /* Add arrows to the left container (pointing right) */
+      .left::before {
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: 22px;
+        width: 0;
+        z-index: 1;
+        right: 30px;
+        border: medium solid #dad4b5;
+        border-width: 10px 0 10px 10px;
+        border-color: transparent transparent transparent white;
+      }
+
+      /* Add arrows to the right container (pointing left) */
+      .right::before {
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: 22px;
+        width: 0;
+        z-index: 1;
+        left: 30px;
+        border: medium solid #f2e8c6;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+      }
+
+      /* Fix the circle for containers on the right side */
+      .right::after {
+        left: -16px;
+      }
+
+      /* The actual content */
+      .content {
+        padding: 20px 30px;
+        background-color: white;
+        position: relative;
+        border-radius: 6px;
+      }
+
+      /* Media queries - Responsive timeline on screens less than 600px wide */
+      @media screen and (max-width: 600px) {
+        /* Place the timelime to the left */
+        .timeline::after {
+          left: 31px;
+        }
+
+        /* Full-width containers */
+        .container {
+          width: 100%;
+          padding-left: 70px;
+          padding-right: 25px;
+        }
+
+        /* Make sure that all arrows are pointing leftwards */
+        .container::before {
+          left: 60px;
+          border: medium solid white;
+          border-width: 10px 10px 10px 0;
+          border-color: transparent white transparent transparent;
+        }
+
+        /* Make sure all circles are at the same spot */
+        .left::after,
+        .right::after {
+          left: 10px;
+        }
+
+        /* Make all right containers behave like the left ones */
+        .right {
+          left: 0%;
+        }
+      }
+      p:hover {
+        background-color: #f4bf96;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li><a href="#af">About Franklin</a></li>
+      <li><a href="#el">Early Life</a></li>
+      <li><a href="#lip">Life In Philadelphia</a></li>
+      <li><a href="#t">Timeline</a></li>
+      <li><a href="#sa">Scientific Achievments</a></li>
+      <li><a href="#pw">Political Work</a></li>
+      <li><a href="#l">Legacy</a></li>
+      <li><a href="#b">Bibliography</a></li>
+    </ul>
+    <h1>Benjamin Franklin</h1>
+    <h4>By: Lola Ducroux</h4>
+    <img
+      src="https://cdn.britannica.com/72/110272-159-A0A4BCB5/Benjamin-Franklin.jpg"
+      width="500"
+    />
+    <h3 id="af">About Franklin</h3>
+    <p>
+      Benjamin Franklin (1706–1790) was one of the most influential figures in
+      American history. A true Renaissance man, he was a polymath whose
+      accomplishments spanned multiple fields, including science, philosophy,
+      diplomacy, literature, and politics. Franklin was best known for his
+      groundbreaking scientific work, especially his experiments with
+      electricity, which earned him international fame. Not to mention his
+      immense role in founding the United States of America. Franklin was a
+      signer of the <em>Declaration of Independence</em> and contributed to the
+      drafting of the <em>U.S. Constitution</em>. His wisdom and pragmatic
+      approach helped steer the fledgling nation through its most formative
+      years.In his later years, Franklin’s influence grew as an advocate for the
+      values of liberty, democracy, and civic responsibility. His life story
+      embodies the spirit of the American Enlightenment and helped lay the
+      foundation for the modern United States.
+    </p>
+    <h3 id="el">Early Life</h3>
+    <p>
+      Benjamin Franklin was born on January 17, 1706, in Boston, Massachusetts,
+      to Josiah Franklin and Abiah Folger. He was the 15th of 17 children,
+      making his early life full of family. His father was a modest soap and
+      candle maker, and his mother came from a prominent New England family.
+      Franklin’s family was not wealthy, and they lived in a middle-class
+      household, but his early environment would shape much of his future
+      achievements.
+    </p>
+    <p>
+      Franklin received only two years of formal schooling, as his family could
+      not afford to send him to school full time. He attended Boston Latin
+      School briefly, but his formal education ended at age 10. However his
+      academic drive read extensively, teaching himself through books, and
+      developed a love for reading and writing.
+    </p>
+    <p>
+      At the age of 12, Franklin was apprenticed to his brother James Franklin,
+      who was a printer. James ran a newspaper, the New England Courant, one of
+      the first in the colonies. Benjamin worked as an apprentice, helping set
+      type and working on the printing press. It was during this time that
+      Franklin began to write anonymously for the paper, contributing essays and
+      critiques. His wit, writing style, and intelligence impressed many
+      readers, and it was in this period that Franklin's love of writing and
+      public discourse truly began to take shape. However, after some time,
+      Franklin’s relationship with his brother became strained. James Franklin
+      was harsh with him, and Benjamin felt stifled by his brother’s
+      authoritarian style. After three years of working under James, Benjamin
+      ran away at age 17 to seek greater opportunities in Philadelphia, a move
+      that would change the course of his life.
+    </p>
+    <h3 id="lip">Life in Philadelphia</h3>
+    <p>
+      Franklin arrived in Philadelphia in 1723 with only a few dollars in his
+      pocket. His first days in the city were difficult, but he found work as a
+      printer. After a few years, he gained experience and began to rise in
+      prominence, eventually opening his own printing business. Philadelphia
+      became his base of operations for the rest of his life.
+    </p>
+    <p>
+      In 1729, he bought a struggling newspaper, the Pennsylvania Gazette, which
+      under his direction became one of the most successful in the colonies.
+      Franklin’s writing, particularly his satirical essays and "Poor Richard's
+      Almanack", published annually from 1732 to 1758, helped solidify his
+      reputation as a public intellectual and a master of both humor and
+      practical advice.
+    </p>
+    <p>
+      One of the most unforgettable moments in Franklin's Autobiography occurs
+      when he arrives in Philadelphia on a Sunday morning, exhausted and
+      famished. He stops at a bakery and asks for three pennies' worth of bread,
+      only to receive "three large, puffy rolls." Carrying one under each arm
+      and nibbling on the third, he walks up Market Street past the Read
+      family’s door, where he catches the eye of Deborah, his future wife. She
+      saw him and "thought, as I certainly did, that I made a most awkward and
+      ridiculous appearance."
+    </p>
+    <p>
+      Franklin's growing success as a printer allowed him to focus more on civic
+      projects. He helped establish the Library Company of Philadelphia in 1731,
+      the first public library in the colonies, and founded the American
+      Philosophical Society in 1743.He became deeply interested in science,
+      particularly in electricity, which would lead to some of his most
+      groundbreaking work.
+    </p>
+    <h3 id="sa">Scientific Achievments</h3>
+    <p>
+      During the 1730s and 1740s, Franklin’s interests expanded into science and
+      philosophy. He conducted a variety of scientific experiments, particularly
+      in the field of electricity, which would become his most well-known area
+      of expertise.
+    </p>
+    <p>
+      His famous kite experiment took place in Philadelphia, in June 1752.
+      Franklin asked his son William to fly a silf kite, to which he had
+      attached a wire on top and a key at the end of a string. Eventually, the
+      kite (and the key) amassed an electric charge from a storm cloud. Franklin
+      was able to collect some of the charge and compared it to the electricity
+      he had created in other experiments. However he did not publicly publish
+      his experiment until October, at which point Franklin did not clarify that
+      he had conducted the experiment himself, an issue that has caused some
+      scholars to doubt his story.
+    </p>
+    <p>
+      Franklin also invented the Franklin stove, a more efficient heating
+      system, and the lightning rod, after his kite experiment. Franklin’s
+      electrical experiments propelled him into a global network of scholars,
+      both men and women, who were pioneering work in fields we now recognize as
+      physics, chemistry, biology, botany, and paleontology.
+    </p>
+    <img
+      src="https://m.media-amazon.com/images/I/61ACL4I1FlL.jpg"
+      width="400"
+    />
+    <p>
+      <em
+        >The image above, "Join, or Die" is one of the most famous political
+        cartoons created by Benjamin Franklin in 1754, during the early stages
+        of the French and Indian War. The image depicts a segmented snake, with
+        each segment labeled to represent one of the American colonies or
+        regions. The message was clear: the colonies needed to unite or face
+        destruction, symbolized by the snake being cut into pieces. Franklin
+        originally used the cartoon in his publication Pennsylvania Gazette to
+        advocate for colonial unity under the Albany Plan of Union, which
+        proposed a collective government to address common challenges. The image
+        became a symbol of colonial unity during the American Revolution, used
+        to encourage the colonies to band together in the fight against
+        Britain.</em
+      >
+    </p>
+    <h3 id="pw">Political Work</h3>
+    <p>
+      Although Benjamin Franklin's electrical experiments brought him great
+      success, he never considered science to be as important as public service.
+    </p>
+    <p>
+      He became a member of the Philadelphia City Council in 1748, justice of
+      the peace in 1749, and in 1751 a city alderman and a member of the
+      Pennsylvania Assembly.
+    </p>
+    <p>
+      In 1753, Franklin was appointed deputy postmaster general, a royal office
+      overseeing the mail system across all the northern colonies. This position
+      marked a turning point in his thinking, as he began to adopt a broader,
+      intercolonial perspective on issues affecting the colonies as a whole.
+    </p>
+    <p>
+      Benjamin Franklin established the Albany Plan of Union in 1754 at the
+      Albany Congress, aimed at creating a unified government for the American
+      colonies. It sought to establish a Grand Council made up of
+      representatives from each colony, with the power to levy taxes, raise
+      armies, and manage colonial defense. The plan was designed to strengthen
+      the colonies’ collective security against the French and Native American
+      threats during the French and Indian War. However, it was rejected by both
+      the colonial assemblies and the British government, as the colonies were
+      unwilling to surrender any authority, and Britain was reluctant to grant
+      too much power to the colonies. Despite its failure, the Albany Plan was
+      an early step toward ideas of colonial unity that would later influence
+      the creation of the U.S. Constitution.
+    </p>
+    <p>
+      More significantly, as the diplomatic representative of the newly-formed
+      American republic in France during the Revolution, Franklin secured
+      diplomatic recognition and essential financial and military support from
+      Louis XVI's government. He was also a key member of the commission that
+      negotiated the treaty in which Great Britain acknowledged the independence
+      of its former 13 colonies. Given that no one else could have achieved all
+      that Franklin did in France during this critical period, he can
+      justifiably be seen as America's greatest diplomat.
+    </p>
+    <h4>That was a lot! Let's look at a timeline to organize all this</h4>
+    <h3 id="t">Timeline!</h3>
+    <div class="timeline">
+      <div class="container left">
+        <div class="content">
+          <h2>1706</h2>
+          <p>Born on January 17th in Boston, Massachusetts</p>
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+          <h2>1718</h2>
+          <p>Begins his apprenticeship with his brother in the printing shop</p>
+        </div>
+      </div>
+      <div class="container left">
+        <div class="content">
+          <h2>1728</h2>
+          <p>Opens printing office in Philadelphia, PA</p>
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+          <h2>1729</h2>
+          <p>
+            Becomes the sole owner and publisher of the Pennsylvania Gazette
+          </p>
+        </div>
+      </div>
+      <div class="container left">
+        <div class="content">
+          <h2>1731</h2>
+          <p>Founds the first public library</p>
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+          <h2>1748</h2>
+          <p>Retires from printing</p>
+        </div>
+      </div>
+      <div class="container left">
+        <div class="content">
+          <h2>1752</h2>
+          <p>Performs his kite experiment</p>
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+          <h2>1757</h2>
+          <p>Goes to England as a colonial representative</p>
+        </div>
+      </div>
+      <div class="container left">
+        <div class="content">
+          <h2>1776</h2>
+          <p>Signs the <em>Declaration of Independence</em></p>
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+          <h2>1778</h2>
+          <p>Negotiates <em>Treaty of Alliance</em> with France</p>
+        </div>
+      </div>
+      <div class="container left">
+        <div class="content">
+          <h2>1782</h2>
+          <p>Negotiates <em>Treaty of Peace</em> with the UK</p>
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+          <h2>1787</h2>
+          <p>Signs the <em>Constitution of the United States</em></p>
+        </div>
+      </div>
+      <div class="container left">
+        <div class="content">
+          <h2>1790</h2>
+          <p>Dies in Philadelphia</p>
+        </div>
+      </div>
+    </div>
+    <p>
+      Benjamin was so significant to the creation of the US that they even put
+      him on the $100 bill!!
+    </p>
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Obverse_of_the_series_2009_%24100_Federal_Reserve_Note.jpg/800px-Obverse_of_the_series_2009_%24100_Federal_Reserve_Note.jpg"
+      width="400"
+    />
+    <h3 id="l">Legacy</h3>
+    <p>
+      Franklin’s legacy is profound and multifaceted. He is remembered as one of
+      the most brilliant and versatile men in American history. His
+      contributions to science, particularly in electricity, and his role in
+      securing American independence and crafting its founding documents ensure
+      his place as a key architect of the United States. Franklin's sayings, his
+      inventions, and his writings continue to influence both American culture
+      and the broader world today.
+    </p>
+    <h3 id="b">Bibliography</h3>
+    <p>https://www.britannica.com/biography/Benjamin-Franklin/Public-service</p>
+    <p>https://www.biography.com/political-figures/benjamin-franklin</p>
+    <p>https://www.history.com/topics/american-revolution/benjamin-franklin</p>
+  </body>
 </html>
